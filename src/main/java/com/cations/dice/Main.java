@@ -49,7 +49,10 @@ public class Main {
 	public void run() {
 		while (true) {
 			var player = nextPlayer();
-			System.out.println("\nIt's " + player.getName() + "'s turn.");
+			System.out.print("\nIt's " + player.getName() + "'s turn.");
+			if (player instanceof Human) scanner.nextLine();
+			else System.out.println();
+
 			var dots = dices.get(RandomInt.get(dices.size())).getFace();
 			if (player.addScore(dots)) {
 				System.out.println("\n" + player.getName() + " won!");
