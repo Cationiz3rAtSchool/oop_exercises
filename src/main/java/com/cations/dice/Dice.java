@@ -1,21 +1,20 @@
 package com.cations.dice;
 
 import java.util.List;
-import java.util.Random;
+import com.cations.dice.util.RandomInt;
 
 public class Dice {
-	private static Random random = new Random();
 	private int faceHigh; // 20% for this face
 
 	public Dice() {
-		this.faceHigh = random.nextInt(6) + 1;
+		this.faceHigh = RandomInt.get(6) + 1;
 	}
 	public Dice(int faceHigh) {
 		this.faceHigh = faceHigh;
 	}
 
 	public int getFace() {
-		var chance = random.nextInt(100);
+		var chance = RandomInt.get(100);
 		var dots = 0;
 		while (chance >= 0) {
 			dots++;
