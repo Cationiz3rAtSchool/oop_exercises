@@ -1,5 +1,6 @@
 package com.cations.dice;
 
+import java.util.List;
 import java.util.Random;
 
 public class Dice {
@@ -25,5 +26,12 @@ public class Dice {
 		}
 
 		return dots;
+	}
+
+	public static int getFaces(List<Dice> dices) {
+		return dices
+			.stream()
+			.map(Dice::getFace)
+			.reduce(0, Integer::sum);
 	}
 }
