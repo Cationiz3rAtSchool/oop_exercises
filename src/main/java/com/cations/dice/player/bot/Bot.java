@@ -47,6 +47,6 @@ public class Bot extends Player {
 	}
 
 	public void response() {
-		System.out.println(getName() + ": " + responses.get(RandomInt.get(responses.size())) + ".");
+		System.out.println(getName() + ": " + responses.get(RandomInt.get(responses.size())));
 	}
 }
