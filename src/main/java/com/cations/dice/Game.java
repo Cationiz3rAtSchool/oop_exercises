@@ -10,7 +10,7 @@ import com.cations.dice.player.Player;
 import com.cations.dice.player.bot.Bot;
 import com.cations.dice.util.RandomInt;
 
-public class Main {
+public class Game {
 	private final static int N_PLAYERS = 4;
 	private static Scanner scanner = new Scanner(System.in);
 	private final List<Dice> dices = Arrays.asList(
@@ -22,7 +22,7 @@ public class Main {
 	private List<Player> players = new ArrayList<>();
 	private Iterator<Player> current;
 
-	public Main(int nHumans) {
+	public Game(int nHumans) {
 		if (nHumans >= N_PLAYERS) {
 			System.out.println("[Warn]: clamping players count to " + N_PLAYERS);
 			nHumans = N_PLAYERS;
@@ -73,7 +73,7 @@ public class Main {
 		int nHumans = scanner.nextInt();
 		scanner.nextLine(); // Clear newline
 
-		var game = new Main(nHumans);
+		var game = new Game(nHumans);
 		game.run();
 
 		scanner.close();
